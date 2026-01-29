@@ -130,7 +130,8 @@ public class PlayerController : MonoBehaviour
             case "Ataque": puedeAtacar = true; break;
             case "DobleSalto": puedeDobleSalto = true; break;
             case "Correr": puedeCorrer = true; break;
-            case "Disparo": puedeDisparar = true; break; // Faltaba este caso
+            case "Disparo": puedeDisparar = true; break; 
         }
+        Debug.Log("Hablilidad nueva  " + nombreHabilidad);
     }
 }

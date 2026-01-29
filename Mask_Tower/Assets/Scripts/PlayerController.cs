@@ -4,52 +4,72 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Módulos (Referencias)")]
     public PlayerAttack playerAttack;
-    //movimiento
-    [SerializeField] private float velocidadMovimiento = 8f;
+    public DoubleJump doubleJump;
+    public PlayerChargedAttack ataqueCargado; 
+
+    [Header("Configuración Movimiento")]
+    [SerializeField] private float velocidadCaminar = 8f;
+    [SerializeField] private float velocidadCorrer = 14f; 
     [SerializeField] private float fuerzaSalto = 10f;
 
-    //deteccion de suelo
+    [Header("Detección de Suelo")]
     [SerializeField] private Transform controladorSuelo; 
     [SerializeField] private float radioDeteccion = 0.2f;
-    [SerializeField] private LayerMask EsSuelo; 
+    [SerializeField] private LayerMask layerSuelo; 
 
-    //Habilidades, Al principio todas son falsas (false). Las activaremos al recoger máscaras.
+    [Header("Habilidades Desbloqueables")]
     public bool puedeAtacar = false;      // Nivel 2
     public bool puedeDobleSalto = false;  // Nivel 3
-    public bool puedeCorrer = false;        // Nivel 4
+    public bool puedeCorrer = false;      // Nivel 4
+    public bool puedeDisparar = false;
 
+    // Variables internas
     private Rigidbody2D rb;
     private float inputHorizontal;
-    public bool Suelo;
+    public bool enSuelo; 
     private bool mirandoDerecha = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        // Autocompletado de seguridad
+        if (ataqueCargado == null) ataqueCargado = GetComponent<PlayerChargedAttack>();
         if (playerAttack == null) playerAttack = GetComponent<PlayerAttack>();
+        if (doubleJump == null) doubleJump = GetComponent<DoubleJump>(); 
     }
 
     void Update()
     {
-        // 1. Input de Movimiento (A = -1, D = 1) 
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        // 2. Input de Salto 
-        // Solo permitimos saltar si detectamos suelo
-        if (Input.GetButtonDown("Jump") && Suelo)
+        if (Input.GetButtonDown("Jump"))
         {
-            Saltar();
+            if (enSuelo)
+            {
+                Saltar(fuerzaSalto); // Salto Normal
+            }
+            else if (puedeDobleSalto && doubleJump != null)
+            {
+                doubleJump.IntentarDobleSalto(); // Doble Salto Modular
+            }
         }
 
-     
-
-        //  ATAQUE 
+       
         if (Input.GetButtonDown("Fire1") && puedeAtacar && !playerAttack.estaAtacando)
         {
-           playerAttack.RealizarAtaque();
+            playerAttack.RealizarAtaque();
+          
         }
-        // VOLTEAR (No permitimos voltear si está atacando)
+
+        // --- 3. ATAQUE CARGADO ---
+        if (puedeDisparar && ataqueCargado != null)
+        {
+            ataqueCargado.GestionarCarga(Input.GetButton("Fire1"));
+        }
+
+        
         if (!playerAttack.estaAtacando)
         {
             if (inputHorizontal > 0 && !mirandoDerecha) Voltear();
@@ -59,33 +79,48 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 4. Detectar si estamos tocando el suelo (fisicas)
-        Suelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, EsSuelo);
+        // Detección de suelo robusta
+        enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
 
-        // 5. Aplicar velocidad horizontal manteniendo la velocidad vertical actual (gravedad)
-        rb.velocity = new Vector2(inputHorizontal * velocidadMovimiento, rb.velocity.y);
+        // Recarga de Doble Salto (Optimizado: si toca suelo, recarga siempre)
+        if (enSuelo && doubleJump != null) 
+        {
+            doubleJump.RecargarSalto();
+        }
+
+        // FÍSICAS DE MOVIMIENTO
+        
+        // Prioridad 1: Si ataca en el suelo, se queda quieto
+        if (playerAttack.estaAtacando && enSuelo)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else
+        {
+            // Prioridad 2: Movimiento Normal vs Correr
+            float velocidadActual = velocidadCaminar;
+
+            
+            if (puedeCorrer && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+            {
+                velocidadActual = velocidadCorrer;
+            }
+
+            rb.velocity = new Vector2(inputHorizontal * velocidadActual, rb.velocity.y);
+        }
     }
 
-    void Saltar()
+    void Saltar(float fuerza)
     {
-        // Reseteamos la velocidad vertical para un salto consistente
         rb.velocity = new Vector2(rb.velocity.x, 0); 
-        rb.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(0, fuerza), ForceMode2D.Impulse);
     }
 
     void Voltear()
     {
         mirandoDerecha = !mirandoDerecha;
-        Vector3 escala = transform.localScale;
-        escala.x *= -1;
-        transform.localScale = escala;
-    }
-
-    void Atacar()
-    {
        
-        Debug.Log("¡PUM! Ataque realizado"); 
-        if(Suelo) rb.AddForce(new Vector2(mirandoDerecha ? 2 : -2, 0), ForceMode2D.Impulse); 
+        transform.Rotate(0f, 180f, 0f);
     }
 
     public void DesbloquearHabilidad(string nombreHabilidad)
@@ -95,6 +130,7 @@ public class PlayerController : MonoBehaviour
             case "Ataque": puedeAtacar = true; break;
             case "DobleSalto": puedeDobleSalto = true; break;
             case "Correr": puedeCorrer = true; break;
+            case "Disparo": puedeDisparar = true; break; // Faltaba este caso
         }
     }
 }

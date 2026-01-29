@@ -17,7 +17,7 @@ public class PlayerVisual : MonoBehaviour
     void Update()
     {
         //  Si no está en el suelo, poner sprite de SALTO
-        if (!playerController.Suelo)
+        if (!playerController.enSuelo)
         {
             CambiarSprite(spriteJump);
         }

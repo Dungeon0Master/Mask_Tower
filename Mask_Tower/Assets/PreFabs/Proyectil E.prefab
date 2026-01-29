@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7470959276523743843}
   - component: {fileID: 4810300055788043063}
   m_Layer: 0
-  m_Name: Proyectil
+  m_Name: Proyectil E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "cantidadDa\xF1o": 2
-  tagObjetivo: Enemigo
+  tagObjetivo: Player
 --- !u!114 &3361417410382493382
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,76 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Módulos (Referencias)")]
+    [Header("Módulos")]
     public PlayerAttack playerAttack;
     public DoubleJump doubleJump;
-    public PlayerChargedAttack ataqueCargado; 
+    public PlayerChargedAttack ataqueCargado;
 
-    [Header("Configuración Movimiento")]
-    [SerializeField] private float velocidadCaminar = 8f;
-    [SerializeField] private float velocidadCorrer = 14f; 
-    [SerializeField] private float fuerzaSalto = 10f;
+    [Header("Movimiento")]
+    [SerializeField] float velocidadCaminar = 8f;
+    [SerializeField] float velocidadCorrer = 14f;
+    [SerializeField] float fuerzaSalto = 10f;
 
-    [Header("Detección de Suelo")]
-    [SerializeField] private Transform controladorSuelo; 
-    [SerializeField] private float radioDeteccion = 0.2f;
-    [SerializeField] private LayerMask layerSuelo; 
+    [Header("Suelo")]
+    [SerializeField] Transform controladorSuelo;
+    [SerializeField] float radioDeteccion = 0.2f;
+    [SerializeField] LayerMask layerSuelo;
 
-    [Header("Habilidades Desbloqueables")]
-    public bool puedeAtacar = false;      // Nivel 2
-    public bool puedeDobleSalto = false;  // Nivel 3
-    public bool puedeCorrer = false;      // Nivel 4
-    public bool puedeDisparar = false;
+    [Header("Habilidades")]
+    public bool puedeAtacar;
+    public bool puedeDobleSalto;
+    public bool puedeCorrer;
+    public bool puedeDisparar;
 
-    // Variables internas
-    private Rigidbody2D rb;
-    private float inputHorizontal;
-    public bool enSuelo; 
-    private bool mirandoDerecha = true;
+    Rigidbody2D rb;
+    float inputHorizontal;
+    public bool enSuelo;
+    bool mirandoDerecha = true;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Autocompletado de seguridad
-        if (ataqueCargado == null) ataqueCargado = GetComponent<PlayerChargedAttack>();
-        if (playerAttack == null) playerAttack = GetComponent<PlayerAttack>();
-        if (doubleJump == null) doubleJump = GetComponent<DoubleJump>(); 
+        playerAttack ??= GetComponent<PlayerAttack>();
+        doubleJump ??= GetComponent<DoubleJump>();
+        ataqueCargado ??= GetComponent<PlayerChargedAttack>();
     }
 
     void Update()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
+        // SALTO
         if (Input.GetButtonDown("Jump"))
         {
-            if (enSuelo)
-            {
-                Saltar(fuerzaSalto); // Salto Normal
-            }
+            if (enSuelo) Saltar(fuerzaSalto);
             else if (puedeDobleSalto && doubleJump != null)
-            {
-                doubleJump.IntentarDobleSalto(); // Doble Salto Modular
-            }
+                doubleJump.IntentarDobleSalto();
         }
 
-       
-        if (Input.GetButtonDown("Fire1") && puedeAtacar && !playerAttack.estaAtacando)
-        {
-            playerAttack.RealizarAtaque();
-          
-        }
+        bool firePressed = Input.GetButton("Fire1");
+        bool fireDown = Input.GetButtonDown("Fire1");
+        bool fireUp = Input.GetButtonUp("Fire1");
 
-        // --- 3. ATAQUE CARGADO ---
+        // ATAQUE CARGADO (prioridad)
         if (puedeDisparar && ataqueCargado != null)
         {
-            ataqueCargado.GestionarCarga(Input.GetButton("Fire1"));
+            ataqueCargado.GestionarCarga(firePressed);
         }
 
-        
-        if (!playerAttack.estaAtacando)
+        // ATAQUE BÁSICO (solo si NO se cargó)
+        if (fireDown && puedeAtacar && playerAttack != null && !playerAttack.estaAtacando)
+        {
+            playerAttack.RealizarAtaque();
+        }
+
+        // VOLTEO
+        if (playerAttack == null || !playerAttack.estaAtacando)
         {
             if (inputHorizontal > 0 && !mirandoDerecha) Voltear();
             else if (inputHorizontal < 0 && mirandoDerecha) Voltear();
@@ -79,59 +74,62 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Detección de suelo robusta
         enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
 
-        // Recarga de Doble Salto (Optimizado: si toca suelo, recarga siempre)
-        if (enSuelo && doubleJump != null) 
-        {
+        if (enSuelo && doubleJump != null)
             doubleJump.RecargarSalto();
-        }
 
-        // FÍSICAS DE MOVIMIENTO
-        
-        // Prioridad 1: Si ataca en el suelo, se queda quieto
-        if (playerAttack.estaAtacando && enSuelo)
+        bool atacando = playerAttack != null && playerAttack.estaAtacando;
+
+        if (atacando && enSuelo)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else
         {
-            // Prioridad 2: Movimiento Normal vs Correr
-            float velocidadActual = velocidadCaminar;
-
-            
-            if (puedeCorrer && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
-            {
-                velocidadActual = velocidadCorrer;
-            }
-
-            rb.velocity = new Vector2(inputHorizontal * velocidadActual, rb.velocity.y);
+            float velocidad = velocidadCaminar;
+            if (puedeCorrer && Input.GetKey(KeyCode.LeftShift)) velocidad = velocidadCorrer;
+            rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
         }
     }
 
     void Saltar(float fuerza)
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0); 
-        rb.AddForce(new Vector2(0, fuerza), ForceMode2D.Impulse);
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
     }
 
     void Voltear()
     {
         mirandoDerecha = !mirandoDerecha;
-       
-        transform.Rotate(0f, 180f, 0f);
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
     }
-
     public void DesbloquearHabilidad(string nombreHabilidad)
     {
         switch (nombreHabilidad)
         {
-            case "Ataque": puedeAtacar = true; break;
-            case "DobleSalto": puedeDobleSalto = true; break;
-            case "Correr": puedeCorrer = true; break;
-            case "Disparo": puedeDisparar = true; break; 
+            case "Ataque":
+                puedeAtacar = true;
+                break;
+
+            case "DobleSalto":
+                puedeDobleSalto = true;
+                break;
+
+            case "Correr":
+                puedeCorrer = true;
+                break;
+
+            case "Disparo":
+                puedeDisparar = true;
+                break;
+
+            default:
+                Debug.LogWarning("Habilidad desconocida: " + nombreHabilidad);
+                break;
         }
-        Debug.Log("Hablilidad nueva  " + nombreHabilidad);
     }
+
 }

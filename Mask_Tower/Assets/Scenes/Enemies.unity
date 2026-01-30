@@ -307,6 +307,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flyer
       objectReference: {fileID: 0}
+    - target: {fileID: 3881006840053706260, guid: dda69bab6e76f8c498cdfeea1a4b3fa7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4847251569276779261, guid: dda69bab6e76f8c498cdfeea1a4b3fa7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,6 +558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy B
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794445888910147388, guid: 6cf45646b7451774bbafe69c06b1584e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1199,6 +1209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jumper
       objectReference: {fileID: 0}
+    - target: {fileID: 6040797096104602207, guid: a5c1f57cd8d04e84399dfaa854e3b236,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1216,6 +1231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801069246698735816, guid: 01794725de34ce841a2aeb5ca382b0f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4824187101809474817, guid: 01794725de34ce841a2aeb5ca382b0f6,
         type: 3}

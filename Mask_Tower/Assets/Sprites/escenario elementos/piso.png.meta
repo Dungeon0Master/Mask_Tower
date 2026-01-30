@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68451ae5ace6d44478e58341e9aa20a9
+guid: b3712c9b453cae049beb542a9414419e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,15 +37,15 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 150
@@ -110,148 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flotantes_0
+      name: piso_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 789
-        width: 1170
-        height: 422
+        x: 2
+        y: 1
+        width: 650
+        height: 288
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 13}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6acb89c325042a845ba2465f2401c2a7
-      internalID: -1924887897
+      spriteID: f452019958bfbf94b93ed59cf423c1cf
+      internalID: 1451114014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flotantes_1
+      name: piso_1
       rect:
         serializedVersion: 2
-        x: 1736
-        y: 778
-        width: 1162
-        height: 405
+        x: 1136
+        y: 0
+        width: 8
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5987ed2bcf2d3b43887097d3ad58145
-      internalID: 665009517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flotantes_2
-      rect:
-        serializedVersion: 2
-        x: 2925
-        y: 964
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab7ebafdce01d1a4abc9704517e29e6a
-      internalID: 1444820477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flotantes_3
-      rect:
-        serializedVersion: 2
-        x: 1310
-        y: 959
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88b4edec6bae68b4e8f526311bac943f
-      internalID: 1122625561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flotantes_4
-      rect:
-        serializedVersion: 2
-        x: 383
-        y: 280
-        width: 415
-        height: 233
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fbe1177375b8a043b2d5d98fa966b24
-      internalID: 1597273894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flotantes_5
-      rect:
-        serializedVersion: 2
-        x: 1343
-        y: 352
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c86605e92c64bf41bb265194ebda241
-      internalID: -1534736664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flotantes_6
-      rect:
-        serializedVersion: 2
-        x: 1351
-        y: 191
-        width: 1573
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9659604fe8830c64294333e551dd48f5
-      internalID: -898351172
+      spriteID: 2c97b4d3bc1e5df489c6d0c14d10180f
+      internalID: -1453334955
       vertices: []
       indices: 
       edges: []
@@ -267,13 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flotantes_0: -1924887897
-      flotantes_1: 665009517
-      flotantes_2: 1444820477
-      flotantes_3: 1122625561
-      flotantes_4: 1597273894
-      flotantes_5: -1534736664
-      flotantes_6: -898351172
+      piso_0: 1451114014
+      piso_1: -1453334955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

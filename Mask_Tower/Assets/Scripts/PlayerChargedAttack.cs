@@ -1,54 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerChargedAttack : MonoBehaviour
 {
-    //Configuracion
+  
     public GameObject prefabProyectil; 
-    public Transform puntoDisparo;     // Un objeto vacío hijo desde donde sale el disparo
+    public Transform puntoDisparo;    
     public float tiempoParaCargar = 1.5f;
     
     private float tiempoPresionado = 0f;
     private bool estaCargado = false;
+    private bool disparando = false; //  Filtro de seguridad
 
-    // Visual simple para saber que está cargado (Greyboxing)
     private SpriteRenderer miSprite;
+    private Animator anim;
 
     void Awake()
     {
         miSprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>(); 
     }
 
     public void GestionarCarga(bool botonPresionado)
     {
+        if (anim != null) anim.SetBool("Cargando", botonPresionado);
+
         if (botonPresionado)
         {
-            // Estamos manteniendo el botón
+            // Lógica de carga...
             tiempoPresionado += Time.deltaTime;
-
             if (tiempoPresionado >= tiempoParaCargar && !estaCargado)
             {
                 estaCargado = true;
-                
-                miSprite.color = Color.yellow; // Feedback visual temporal
+                miSprite.color = Color.yellow; 
             }
         }
-        else
+        else // Soltamos botón
         {
-            // Soltamos el botón
             if (estaCargado)
             {
-                Disparar();
+                PrepararDisparo();
             }
-            // Reseteamos todo
+            // Reset
             tiempoPresionado = 0;
             estaCargado = false;
-            miSprite.color = Color.white; // Volver a color normal
+            miSprite.color = Color.white; 
         }
     }
 
-    void Disparar()
+    void PrepararDisparo()
+    {
+        disparando = true; 
+        // Como usamos la misma animación de ataque, reutilizamos el trigger "atacar"
+        if (anim != null) anim.SetTrigger("atacar"); 
+    }
+
+    public void EventoGolpe()
+    {
+        // VERIFICACIÓN: Solo disparamos si venimos de una carga
+        if (disparando)
+        {
+            DispararProyectil();
+            disparando = false; // APAGAMOS EL FILTRO (Reset inmediato tras disparar)
+        }
+    }
+
+    void DispararProyectil()
     {
         if (prefabProyectil != null && puntoDisparo != null)
         {

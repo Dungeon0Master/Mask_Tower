@@ -24,16 +24,20 @@ public class PlayerController : MonoBehaviour
     public bool puedeDisparar;
 
     Rigidbody2D rb;
+
     float inputHorizontal;
     public bool enSuelo;
+    Animator anim;
     bool mirandoDerecha = true;
 
     private bool estaCargandoAtaque = false;
+    private bool estaSaltando = false;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         playerAttack ??= GetComponent<PlayerAttack>();
         doubleJump ??= GetComponent<DoubleJump>();
         ataqueCargado ??= GetComponent<PlayerChargedAttack>();
@@ -46,9 +50,21 @@ public class PlayerController : MonoBehaviour
         // SALTO
         if (Input.GetButtonDown("Jump"))
         {
-            if (enSuelo) Saltar(fuerzaSalto);
-            else if (puedeDobleSalto && doubleJump != null)
+            if (enSuelo && !estaSaltando)
+            {
+                // 1. SALTO EN TIERRA (Con carga)
+                // En lugar de saltar ya, iniciamos la animación y bloqueamos
+                estaSaltando = true; 
+
+                if(anim != null) anim.SetTrigger("IniciarSalto"); // Trigger nuevo
+            }
+            else if (puedeDobleSalto && doubleJump != null && !enSuelo)
+            {
+                // Aquí activamos la animación nueva específica
+                if(anim != null) anim.SetTrigger("DobleSalto");
+                
                 doubleJump.IntentarDobleSalto();
+            }
         }
 
         bool ataqueNormalDown = Input.GetButtonDown("Fire1"); // Click izquierdo
@@ -71,8 +87,12 @@ public class PlayerController : MonoBehaviour
         // VOLTEO
         if (playerAttack == null || !playerAttack.estaAtacando)
         {
-            if (inputHorizontal > 0 && !mirandoDerecha) Voltear();
-            else if (inputHorizontal < 0 && mirandoDerecha) Voltear();
+            // Bloqueamos volteo si estamos cargando el salto para que no se vea raro
+            if (!estaSaltando) 
+            {
+                if (inputHorizontal > 0 && !mirandoDerecha) Voltear();
+                else if (inputHorizontal < 0 && mirandoDerecha) Voltear();
+            }
         }
         estaCargandoAtaque = ataqueCargadoPresionado;
 
@@ -85,7 +105,7 @@ public class PlayerController : MonoBehaviour
         if (enSuelo && doubleJump != null)
             doubleJump.RecargarSalto();
 
-        if (estaCargandoAtaque)
+        if (estaCargandoAtaque )
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
@@ -99,13 +119,15 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
         }
     }
-
-
-    void Saltar(float fuerza)
+   
+   public void EventoImpulsoSalto()
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        
+        estaSaltando = false; 
     }
+
 
     void Voltear()
     {

@@ -25,6 +25,10 @@ public class CausarDaño : MonoBehaviour
                 // enviamos también 'transform.position' para calcular el empuje
                 vida.RecibirDaño(cantidadDaño, transform.position); 
             }
+            if (gameObject.CompareTag("Proyectil"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -37,6 +41,10 @@ public class CausarDaño : MonoBehaviour
             if (vida != null)
             {
                 vida.RecibirDaño(cantidadDaño, transform.position);
+            }
+            if (gameObject.CompareTag("Proyectil"))
+            {
+                Destroy(gameObject);
             }
         }
     }

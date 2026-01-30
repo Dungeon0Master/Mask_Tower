@@ -40,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backgrond
+    uniqueID: 1903745111
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Esenario
+    uniqueID: 2933319461
     locked: 0

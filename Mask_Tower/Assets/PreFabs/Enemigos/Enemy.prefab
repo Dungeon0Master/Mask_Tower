@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1206193200640487054}
   - component: {fileID: 2784326325219110547}
   - component: {fileID: 802015893074609216}
+  - component: {fileID: 4697550335250303171}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemigo
@@ -62,8 +63,8 @@ Transform:
   m_GameObject: {fileID: 6794445888910147388}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: -3.81, z: 0.03973891}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.23, y: -3.9028, z: 0.03973891}
+  m_LocalScale: {x: 1, y: 0.9227, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8249907681613793624}
@@ -110,13 +111,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 91669e299a3e1a147b3940d44bb0f6a9,
-    type: 3}
-  m_Color: {r: 0.49803925, g: 0.18431373, b: 0.627451, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: -131743856, guid: 3a170f25779dc44468bf444075e390f9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0869546, y: 0.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -134,11 +134,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0b64331b2b698c740b0baefa3b6a59fb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -158,7 +158,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6794445888910147388}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0b64331b2b698c740b0baefa3b6a59fb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dac2f908eeb1d4e84ec4b707f2b11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 3
+  vidaMaxima: 2
   vidaActual: 0
   aplicaRetroceso: 1
-  fuerzaRetroceso: 5
+  fuerzaRetroceso: 8
 --- !u!114 &2784326325219110547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +234,24 @@ MonoBehaviour:
   layerObstaculos:
     serializedVersion: 2
     m_Bits: 8
+--- !u!95 &4697550335250303171
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794445888910147388}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb8e0aa76ce82744f9f5b2c3c507d2dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 // En lugar de saltar ya, iniciamos la animación y bloqueamos
                 estaSaltando = true; 
 
-                if(anim != null) anim.SetTrigger("IniciarSalto"); // Trigger nuevo
+                if(anim != null) anim.SetTrigger("IniciarSalto"); 
             }
             else if (puedeDobleSalto && doubleJump != null && !enSuelo)
             {

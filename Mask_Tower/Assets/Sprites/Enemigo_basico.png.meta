@@ -118,7 +118,7 @@ TextureImporter:
         width: 326
         height: 276
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
         width: 368
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
         width: 393
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 326
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 272
         height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 258
         height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
         width: 344
         height: 284
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
         width: 397
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,7 +286,7 @@ TextureImporter:
         width: 322
         height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +307,7 @@ TextureImporter:
         width: 342
         height: 314
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: Enemigo_basico_10
       rect:
         serializedVersion: 2
-        x: 909
+        x: 912
         y: 2057
         width: 390
         height: 296
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,7 +349,7 @@ TextureImporter:
         width: 425
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,7 +370,7 @@ TextureImporter:
         width: 416
         height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,7 +391,7 @@ TextureImporter:
         width: 214
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -407,12 +407,12 @@ TextureImporter:
       name: Enemigo_basico_14
       rect:
         serializedVersion: 2
-        x: 3190
+        x: 3446
         y: 2053
-        width: 468
+        width: 212
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,7 +433,7 @@ TextureImporter:
         width: 132
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,7 +454,7 @@ TextureImporter:
         width: 218
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,7 +475,7 @@ TextureImporter:
         width: 78
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,7 +496,7 @@ TextureImporter:
         width: 224
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -517,7 +517,7 @@ TextureImporter:
         width: 38
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,7 +538,7 @@ TextureImporter:
         width: 126
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,7 +559,7 @@ TextureImporter:
         width: 52
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,7 +580,7 @@ TextureImporter:
         width: 314
         height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -601,14 +601,14 @@ TextureImporter:
         width: 44
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2e27a5d64af342458b3309c8b8768e6
-      internalID: -238210199
+      spriteID: 4031b1c3e7259a7409f3cf57cf7359ee
+      internalID: 180868822
       vertices: []
       indices: 
       edges: []
@@ -617,19 +617,19 @@ TextureImporter:
       name: Enemigo_basico_24
       rect:
         serializedVersion: 2
-        x: 245
+        x: 159
         y: 629
-        width: 278
+        width: 364
         height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4619187522363642a8a9065382fe00c
-      internalID: -405559354
+      spriteID: 4d2c18f9254df4e41b195cb77c8092bd
+      internalID: 1129536292
       vertices: []
       indices: 
       edges: []
@@ -643,14 +643,14 @@ TextureImporter:
         width: 26
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7652d15044845748837943e6f0f54ea
-      internalID: 1944135340
+      spriteID: 0fe73fcaf6ed2ef44a439ca8e3a64927
+      internalID: 652229685
       vertices: []
       indices: 
       edges: []
@@ -659,19 +659,19 @@ TextureImporter:
       name: Enemigo_basico_26
       rect:
         serializedVersion: 2
-        x: 1045
+        x: 933
         y: 621
-        width: 272
+        width: 384
         height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9400aec0abc8fc143865f2cdc5c2466b
-      internalID: -569741540
+      spriteID: 380e0b7b589ef9f489daba0363709616
+      internalID: -1160309748
       vertices: []
       indices: 
       edges: []
@@ -685,14 +685,14 @@ TextureImporter:
         width: 19
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4f9a46a8b5eba94d83eca5ec973e2b5
-      internalID: -1874919210
+      spriteID: 2a341bbe32a13e841887287512281d3a
+      internalID: -1663109803
       vertices: []
       indices: 
       edges: []
@@ -701,19 +701,19 @@ TextureImporter:
       name: Enemigo_basico_28
       rect:
         serializedVersion: 2
-        x: 1761
+        x: 1731
         y: 623
-        width: 327
+        width: 360
         height: 280
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fc8ff30d237ffb4280a8b46f5b40cb7
-      internalID: 23077365
+      spriteID: 6821f111301907f4bacf79909db4e8dd
+      internalID: -1049755517
       vertices: []
       indices: 
       edges: []
@@ -727,14 +727,14 @@ TextureImporter:
         width: 326
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1af66f871992f4b469434d830eb5e76e
-      internalID: 2002074418
+      spriteID: f25df9ba7a1d356488f0b4d28a8a6df0
+      internalID: 1131390052
       vertices: []
       indices: 
       edges: []
@@ -748,14 +748,14 @@ TextureImporter:
         width: 42
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49b2f46ffc1af164685af4b0763080a0
-      internalID: 1320236242
+      spriteID: f669efbb020b09d49a624662efb117b0
+      internalID: -510099896
       vertices: []
       indices: 
       edges: []
@@ -769,14 +769,14 @@ TextureImporter:
         width: 32
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95130c8f9a90e27409aa60b5609536b9
-      internalID: 808156986
+      spriteID: b16e82740b927a749bb52605b75e3c67
+      internalID: -1955314007
       vertices: []
       indices: 
       edges: []
@@ -790,14 +790,14 @@ TextureImporter:
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074258db260b5464bb2b913b39f09057
-      internalID: 1019037134
+      spriteID: d361a117577d8dd438c4bc223b8c1978
+      internalID: -1778541504
       vertices: []
       indices: 
       edges: []
@@ -811,14 +811,14 @@ TextureImporter:
         width: 38
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7052791fb6219247bad4be15fae7f61
-      internalID: -1933775042
+      spriteID: 05a64ee88fcc0964bbff8f9cdf2e8ea7
+      internalID: -1028691286
       vertices: []
       indices: 
       edges: []
@@ -832,14 +832,14 @@ TextureImporter:
         width: 28
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c5beae71bb72a1409b413cabcf7ac4e
-      internalID: -2104505446
+      spriteID: 49e2d619922714c4e9aa953346dd477a
+      internalID: -734502641
       vertices: []
       indices: 
       edges: []
@@ -848,19 +848,19 @@ TextureImporter:
       name: Enemigo_basico_35
       rect:
         serializedVersion: 2
-        x: 50
-        y: 1330
-        width: 569
-        height: 122
+        x: 0
+        y: 1333
+        width: 720
+        height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ca8c4efaf868f54081e52cc2128e353
-      internalID: -760197283
+      spriteID: 88bd19a6ad438f347bb3cdf241b6ebad
+      internalID: 1228907661
       vertices: []
       indices: 
       edges: []
@@ -869,19 +869,19 @@ TextureImporter:
       name: Enemigo_basico_36
       rect:
         serializedVersion: 2
-        x: 763
-        y: 1348
-        width: 629
-        height: 76
+        x: 731
+        y: 1333
+        width: 720
+        height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee93bd163cd7c34ab0b40b987eb120a
-      internalID: -1427803436
+      spriteID: ffef504b5bb4f7743b520d6d4b6c7add
+      internalID: 1805444013
       vertices: []
       indices: 
       edges: []
@@ -890,19 +890,166 @@ TextureImporter:
       name: Enemigo_basico_37
       rect:
         serializedVersion: 2
-        x: 1523
-        y: 1320
-        width: 693
-        height: 132
+        x: 1485
+        y: 1330
+        width: 720
+        height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df174a626671d2b41b375c4a8c330de7
-      internalID: -812635950
+      spriteID: 18bca644613a7d64fac5cb3ebdcc28e8
+      internalID: -516602261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_38
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 1333
+        width: 720
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d679bbee014114c8ccac357f31e5a7
+      internalID: -1241745871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2060
+        width: 720
+        height: 312
+      alignment: 9
+      pivot: {x: 0.48161003, y: 0.48939005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b7a9caa0ca97a4ea38b09080c09763
+      internalID: -225789176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_40
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 2043
+        width: 720
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806379e8e7f077f4a9c4243a583a0b03
+      internalID: 1228393521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_41
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 2054
+        width: 720
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbc57948cc4e554bb6d4477dd823b72
+      internalID: 1241313178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_42
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 2057
+        width: 720
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8c6e9a33c5a0343bce81e1cbeeed62
+      internalID: -594088786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_43
+      rect:
+        serializedVersion: 2
+        x: 3055
+        y: 2054
+        width: 720
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fad56b42a703dd4f8ae4f5131fca85f
+      internalID: -1980772905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_basico_44
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 2786
+        width: 720
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fb1b63c0c42204ea8d709317feba8d
+      internalID: -389884547
       vertices: []
       indices: 
       edges: []
@@ -934,23 +1081,30 @@ TextureImporter:
       Enemigo_basico_20: 2042085702
       Enemigo_basico_21: 711427003
       Enemigo_basico_22: -3130918
-      Enemigo_basico_23: -238210199
-      Enemigo_basico_24: -405559354
-      Enemigo_basico_25: 1944135340
-      Enemigo_basico_26: -569741540
-      Enemigo_basico_27: -1874919210
-      Enemigo_basico_28: 23077365
-      Enemigo_basico_29: 2002074418
+      Enemigo_basico_23: 180868822
+      Enemigo_basico_24: 1129536292
+      Enemigo_basico_25: 652229685
+      Enemigo_basico_26: -1160309748
+      Enemigo_basico_27: -1663109803
+      Enemigo_basico_28: -1049755517
+      Enemigo_basico_29: 1131390052
       Enemigo_basico_3: 1960132549
-      Enemigo_basico_30: 1320236242
-      Enemigo_basico_31: 808156986
-      Enemigo_basico_32: 1019037134
-      Enemigo_basico_33: -1933775042
-      Enemigo_basico_34: -2104505446
-      Enemigo_basico_35: -760197283
-      Enemigo_basico_36: -1427803436
-      Enemigo_basico_37: -812635950
+      Enemigo_basico_30: -510099896
+      Enemigo_basico_31: -1955314007
+      Enemigo_basico_32: -1778541504
+      Enemigo_basico_33: -1028691286
+      Enemigo_basico_34: -734502641
+      Enemigo_basico_35: 1228907661
+      Enemigo_basico_36: 1805444013
+      Enemigo_basico_37: -516602261
+      Enemigo_basico_38: -1241745871
+      Enemigo_basico_39: -225789176
       Enemigo_basico_4: -1329523999
+      Enemigo_basico_40: 1228393521
+      Enemigo_basico_41: 1241313178
+      Enemigo_basico_42: -594088786
+      Enemigo_basico_43: -1980772905
+      Enemigo_basico_44: -389884547
       Enemigo_basico_5: 2136352033
       Enemigo_basico_6: -1080622007
       Enemigo_basico_7: -1976614301

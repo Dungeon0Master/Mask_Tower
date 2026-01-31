@@ -33,6 +33,12 @@ public class MascaraFragmento : MonoBehaviour
         player.enabled = false;
         rb.velocity = Vector2.zero;
 
+        rb.gravityScale = 10f;
+
+        yield return new WaitUntil(() => rb.velocity.y == 0);
+
+        rb.gravityScale = 1f; // Restauramos gravedad para después
+
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
          if (sr != null) sr.enabled = false;
 
@@ -45,6 +51,7 @@ public class MascaraFragmento : MonoBehaviour
 
         //  Ejecutar animación de recoger 
         if (anim != null) anim.SetTrigger("Recoger");
+        yield return new WaitForSeconds(1.5f);
     
         
 

@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 164968232}
   - component: {fileID: 164968231}
   m_Layer: 0
-  m_Name: BG_Mesh_Mid
+  m_Name: BG_Mesh_Far
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplier: 0.6
 --- !u!64 &164968232
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2399,7 +2399,7 @@ GameObject:
   - component: {fileID: 1000996056}
   - component: {fileID: 1000996055}
   m_Layer: 0
-  m_Name: BG_Mesh_Far
+  m_Name: BG_Mesh_VeryFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.6
+  parallaxMultiplier: 0.9
 --- !u!64 &1000996056
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2499,7 +2499,7 @@ Transform:
   m_GameObject: {fileID: 1000996054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.8, y: 3, z: 12}
+  m_LocalPosition: {x: 35.8, y: 3, z: 15}
   m_LocalScale: {x: 158.5, y: 17.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2792,7 +2792,7 @@ GameObject:
   - component: {fileID: 1073360470}
   - component: {fileID: 1073360469}
   m_Layer: 0
-  m_Name: BG_Mesh_Near
+  m_Name: BG_Mesh_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplier: 0.3
 --- !u!64 &1073360470
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3835,7 +3835,7 @@ GameObject:
   - component: {fileID: 1508834864}
   - component: {fileID: 1508834863}
   m_Layer: 0
-  m_Name: BG_Mesh_VeryFar
+  m_Name: BG_Mesh_Near
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3853,7 +3853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.9
+  parallaxMultiplier: 0.1
 --- !u!64 &1508834864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3935,7 +3935,7 @@ Transform:
   m_GameObject: {fileID: 1508834862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.8, y: 3, z: 15}
+  m_LocalPosition: {x: 35.8, y: 3, z: 20}
   m_LocalScale: {x: 158.5, y: 17.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

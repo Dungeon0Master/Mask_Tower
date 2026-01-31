@@ -29,13 +29,14 @@ public class MascaraFragmento : MonoBehaviour
 
     private IEnumerator SecuenciaFinalNivel(PlayerController player, Animator anim,Rigidbody2D rb)
     {
-        //  Bloquear movimiento del jugador
-        player.enabled = false;
-        rb.velocity = Vector2.zero;
+      
 
         rb.gravityScale = 10f;
 
         yield return new WaitUntil(() => rb.velocity.y == 0);
+
+         player.enabled = false;
+        rb.velocity = Vector2.zero;
 
         rb.gravityScale = 1f; // Restauramos gravedad para después
 

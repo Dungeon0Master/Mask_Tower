@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13966, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: LevelNedds
+  m_EditorClassIdentifier: 
+  templateScene: {fileID: 102900000, guid: 3e00612579368454a99b4d18be01eaff, type: 3}
+  templateName: Lo que debe Tener siempre un nivel
+  description: 
+  preview: {fileID: 0}
+  dependencies:
+  - dependency: {fileID: 7400000, guid: d857d7521013b834b9588c908b3e1a4c, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 9100000, guid: c30e293645dd7b545b3ba59a433b3142, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 5cf4255e690b6584a94fc75d75e0ea27, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 39bec7e3b6af22d4b84a82c677015dac, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 91669e299a3e1a147b3940d44bb0f6a9, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: b5dce1170a7e6a641880ad666df47a9b, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 579af566a8ca85d44bacbfc0696c5d04, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 4658933252609739645, guid: 005874eed85f37f48b5f224f93007c58,
+      type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 022419d00c8739b46975daf62005df20, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: c597917f51e6e7a4b85a9db39d4210d9, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 825f87b38a076cc42b8d1d31548591f5, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: f0befc80b2a262f44a51ec534531aa4d, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 90f085b7029d62b4fbf204639161eb2b, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 34bafc70dacf48447bd2d008aceec870, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 875cabdcda27f80478a31436ca2b2883, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: 5c13b2e8582e78d4896d10f0295d85c2, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 0135536b58a58d744aafe84cebc7d0f1, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 6200000, guid: 0b64331b2b698c740b0baefa3b6a59fb, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 5f2a108eb023faf43a809979fd3d38f2, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: b8ba3923a6094cd48b85425f47fd7450, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 9100000, guid: 7f1f5597d6a373142a6bc0e4ff2c331f, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 7400000, guid: d4ed7d94a88da394ba545f2fb5043504, type: 2}
+    instantiationMode: 0
+  templatePipeline: {fileID: 0}
+  badge: {fileID: 0}
+  addToDefaults: 0

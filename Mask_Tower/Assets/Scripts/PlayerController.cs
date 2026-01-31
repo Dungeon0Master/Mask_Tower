@@ -118,16 +118,27 @@ public class PlayerController : MonoBehaviour
 
             rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
         }
-    }
-   
-   public void EventoImpulsoSalto()
-    {
-        rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
-        
-        estaSaltando = false; 
+        if (estaSaltando && !enSuelo)
+        {
+            CancelarSalto();
+        }
+
     }
 
+    public void EventoImpulsoSalto()
+    {
+        // Si ya no estamos en el suelo, cancelamos
+        if (!enSuelo)
+        {
+            estaSaltando = false;
+            return;
+        }
+
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+
+        estaSaltando = false;
+    }
 
     void Voltear()
     {
@@ -159,6 +170,17 @@ public class PlayerController : MonoBehaviour
             default:
                 Debug.LogWarning("Habilidad desconocida: " + nombreHabilidad);
                 break;
+        }
+    }
+
+    void CancelarSalto()
+    {
+        estaSaltando = false;
+
+        if (anim != null)
+        {
+            anim.ResetTrigger("IniciarSalto");
+            //anim.SetTrigger("Player_Ide"); 
         }
     }
 

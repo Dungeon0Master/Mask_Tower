@@ -85,4 +85,15 @@ public class SistemaVida : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Morir()
+    {
+        if (CompareTag("Boss"))
+        {
+            GetComponent<BossAbductor>().MorirBoss();
+            return;
+        }
+
+        Destroy(gameObject);
+    }
+
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9042732392060533152}
   - component: {fileID: 6036929785199430944}
-  - component: {fileID: 1788682420987786540}
   - component: {fileID: 3928307754426174571}
   - component: {fileID: 7190699730424838414}
+  - component: {fileID: 7138972210293693270}
   m_Layer: 0
   m_Name: G_Derecha
   m_TagString: Untagged
@@ -49,21 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "cantidadDa\xF1o": 1
   tagObjetivo: Player
---- !u!114 &1788682420987786540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283020580769719754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610ddcd2871e4814ba07eeb7a3123d77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 9086721636455542620}
-  offset: {x: -1, y: 0}
-  suavidad: 5
 --- !u!212 &3928307754426174571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -152,6 +137,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7138972210293693270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283020580769719754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d819456ed7ad94598554bda7967a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 9042732392060533152}
+  offset: {x: -1, y: 0}
+  suavidad: 5
 --- !u!1 &1156919117620630271
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2829095013319514947}
   - component: {fileID: 7599204347165850255}
-  - component: {fileID: 6352842914628807613}
   - component: {fileID: 2241897438332434553}
   - component: {fileID: 338105051057709224}
+  - component: {fileID: 3371185285404615319}
   m_Layer: 0
   m_Name: G_Izquierda
   m_TagString: Untagged
@@ -237,21 +237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "cantidadDa\xF1o": 1
   tagObjetivo: Player
---- !u!114 &6352842914628807613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860834646984678213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610ddcd2871e4814ba07eeb7a3123d77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 9086721636455542620}
-  offset: {x: 1, y: 0}
-  suavidad: 5
 --- !u!212 &2241897438332434553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -340,6 +325,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3371185285404615319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860834646984678213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d819456ed7ad94598554bda7967a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 2829095013319514947}
+  offset: {x: 1, y: 0}
+  suavidad: 5
 --- !u!1 &2817912936798253022
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,8 +415,8 @@ GameObject:
   - component: {fileID: 4772506631530806634}
   - component: {fileID: 390433946105586773}
   - component: {fileID: 6992087729481592408}
-  - component: {fileID: 6333276346404996589}
   - component: {fileID: 964209278639807520}
+  - component: {fileID: 5771422509962408643}
   m_Layer: 0
   m_Name: ABDUCTOR
   m_TagString: Untagged
@@ -572,31 +572,6 @@ MonoBehaviour:
   vidaActual: 20
   aplicaRetroceso: 1
   fuerzaRetroceso: 5
---- !u!114 &6333276346404996589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647739118945305055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c17d3d78fa90143835affbd3d73edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: {fileID: 6992087729481592408}
-  puntoCentroArriba: {fileID: 24196306712975598}
-  puntoDerecha: {fileID: 229304894530869429}
-  puntoIzquierda: {fileID: 5935411851953912751}
-  velocidadMovimiento: 4
-  tiempoCarga: 0.1
-  tiempoLluvia: 0.5
-  prefabFuego: {fileID: 2377320989498559060, guid: 1561361bd24f4cb42ac10fac8a83f585,
-    type: 3}
-  puntoSpawnTecho1: {fileID: 8151936563042428116}
-  intervaloFuego: 1
-  hitboxVulnerable: {fileID: 2617185025962127836}
-  fragmentoMascara: {fileID: 0}
 --- !u!114 &964209278639807520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +586,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "cantidadDa\xF1o": 1
   tagObjetivo: Player
+--- !u!114 &5771422509962408643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647739118945305055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9fe43949d6b6f44a9aa9af65ead973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: {fileID: 6992087729481592408}
+  spriteRenderer: {fileID: 1277073658520701608}
+  puntoCentroArriba: {fileID: 24196306712975598}
+  puntoDerecha: {fileID: 229304894530869429}
+  puntoIzquierda: {fileID: 5935411851953912751}
+  velocidadMovimiento: 4
+  tiempoCarga: 3.5
+  tiempoLluvia: 4
+  hitboxVulnerable: {fileID: 2617185025962127836}
+  prefabFuego: {fileID: 4658933252609739645, guid: 005874eed85f37f48b5f224f93007c58,
+    type: 3}
+  puntoSpawnTecho: {fileID: 8151936563042428116}
+  intervaloFuego: 0.4
+  fragmentoMascara: {fileID: 0}
 --- !u!1 &5828940184855612962
 GameObject:
   m_ObjectHideFlags: 0

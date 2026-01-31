@@ -322,12 +322,6 @@ Transform:
   - {fileID: 930816703}
   m_Father: {fileID: 1492005688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &642731227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6437721757750992710, guid: 8cb15ecadd1f52f43898507da4744ec2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1177537329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879840793
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,79 +620,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1177537329
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483814093915513104, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664789928373495280, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: habilidadAOtorgar
-      value: Ataque
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437721757750992710, guid: 8cb15ecadd1f52f43898507da4744ec2,
-        type: 3}
-      propertyPath: m_Name
-      value: Mask
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8cb15ecadd1f52f43898507da4744ec2, type: 3}
 --- !u!1 &1492005678
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,10 +795,10 @@ MonoBehaviour:
   layerSuelo:
     serializedVersion: 2
     m_Bits: 8
-  puedeAtacar: 0
-  puedeDobleSalto: 0
-  puedeCorrer: 0
-  puedeDisparar: 0
+  puedeAtacar: 1
+  puedeDobleSalto: 1
+  puedeCorrer: 1
+  puedeDisparar: 1
   enSuelo: 0
 --- !u!50 &1492005686
 Rigidbody2D:
@@ -1032,11 +953,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 1156919117620630271, guid: 4396bd4b9aff0524ba5b3819e1e0e064,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647739118945305055, guid: 4396bd4b9aff0524ba5b3819e1e0e064,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828940184855612962, guid: 4396bd4b9aff0524ba5b3819e1e0e064,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
     - target: {fileID: 6333276346404996589, guid: 4396bd4b9aff0524ba5b3819e1e0e064,
         type: 3}
       propertyPath: fragmentoMascara
       value: 
-      objectReference: {fileID: 642731227}
+      objectReference: {fileID: 0}
     - target: {fileID: 9071197819950449081, guid: 4396bd4b9aff0524ba5b3819e1e0e064,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1098,6 +1034,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 317379211}
   - {fileID: 879840796}
-  - {fileID: 1177537329}
   - {fileID: 1492005688}
   - {fileID: 2612886264168209920}

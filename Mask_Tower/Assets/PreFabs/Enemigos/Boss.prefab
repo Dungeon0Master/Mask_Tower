@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 283020580769719754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 9086721636455542620}
-  offset: {x: -1.5, y: 0}
+  offset: {x: -1, y: 0}
   suavidad: 5
 --- !u!212 &3928307754426174571
 SpriteRenderer:
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 9071197819950449081}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 1860834646984678213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 9086721636455542620}
-  offset: {x: 1.5, y: 0}
+  offset: {x: 1, y: 0}
   suavidad: 5
 --- !u!212 &2241897438332434553
 SpriteRenderer:
@@ -675,7 +675,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0601542, y: -0.08421588}
+  m_Offset: {x: -0.037075877, y: -0.08421588}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -686,7 +686,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8796916, y: 1.6977892}
+  m_Size: {x: 3.6583488, y: 1.6977892}
   m_EdgeRadius: 0
 --- !u!1 &8749426635618908877
 GameObject:

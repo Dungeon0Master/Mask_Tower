@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Proyectil
+  - Boss
   layers:
   - Default
   - TransparentFX

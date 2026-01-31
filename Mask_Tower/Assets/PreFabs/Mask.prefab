@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1361647835
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1450456050, guid: 579af566a8ca85d44bacbfc0696c5d04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   habilidadAOtorgar: Ataque
   mascaraVisualEnJugador: {fileID: 0}
+  puertaSalida: {fileID: 0}
+  velocidadCaminataAuto: 3
 --- !u!61 &7329095585588406150
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0533333, y: 0.93333334}
+    oldSize: {x: 2.1066666, y: 1.8666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

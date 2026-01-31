@@ -47,6 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Esenario
+  - name: Ecenario
+    uniqueID: 3042553497
+    locked: 0
+  - name: Enemigos
+    uniqueID: 2483519689
+    locked: 0
+  - name: Player
     uniqueID: 2933319461
     locked: 0

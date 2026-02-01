@@ -5,13 +5,26 @@ public class PuertaSalida : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Si el jugador toca la luz de la puerta tras la caminata...
         if (other.CompareTag("Player"))
         {
-            
-            
-            
-            Time.timeScale = 0;
+            CargarSiguienteEscena();
+        }
+    }
+
+    public void CargarSiguienteEscena()
+    {
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        int proximaEscena = escenaActual + 1;
+
+        // Si es el último nivel, el siguiente índice debería ser tu cinemática de salida
+        if (proximaEscena < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(proximaEscena);
+        }
+        else
+        {
+            Debug.Log("¡Juego Terminado!");
+            // Aquí podrías volver al menú principal
         }
     }
 }

@@ -12,13 +12,14 @@ public class TriggerActivator : MonoBehaviour
     public List<GameObject> objetosADesactivar;
 
     [Header("Ajustes del Trigger")]
-    [SerializeField] private string tagJugador = "Player";
+   
     private bool yaSeUso = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("aqui se toco");
         // Verificamos que sea el jugador y que el trigger no se haya usado ya
-        if (!yaSeUso && other.CompareTag(tagJugador))
+        if (!yaSeUso && other.CompareTag("Player"))
         {
             EjecutarAccion();
         }

@@ -64,6 +64,15 @@ public class MascaraFragmento : MonoBehaviour
             {
                 // Calculamos dirección hacia la puerta
                 float direccion = (puertaSalida.position.x - rb.transform.position.x) > 0 ? 1 : -1;
+
+                float escalaActualX = rb.transform.localScale.x;
+
+                if (direccion * escalaActualX < 0)
+                {
+                    Vector3 escala = rb.transform.localScale;
+                    escala.x *= -1;
+                    rb.transform.localScale = escala;
+                }
                 
                 // Aplicamos velocidad constante
                 rb.velocity = new Vector2(direccion * velocidadCaminataAuto, rb.velocity.y);

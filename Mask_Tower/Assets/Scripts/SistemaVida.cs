@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 using System.Collections;
-
 
 public class SistemaVida : MonoBehaviour
 {
@@ -14,10 +12,12 @@ public class SistemaVida : MonoBehaviour
     public bool aplicaRetroceso = true;
     [SerializeField] private float fuerzaRetroceso = 5f;
 
-    // Referencias opcionales (pueden ser nulas en algunos enemigos)
+    // Referencias opcionales
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D miCollider;
+
+    [SerializeField] private BossAbductor scriptBoss;
 
     void Start()
     {
@@ -25,21 +25,36 @@ public class SistemaVida : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         miCollider = GetComponent<Collider2D>();
+        
+        // Intentamos obtener el script del Boss automáticamente
+        scriptBoss = GetComponent<BossAbductor>();
     }
 
     public void RecibirDaño(int cantidad, Vector2 posicionAtacante)
     {
-        if (vidaActual <= 0) return; // Si ya está muerto, ignorar golpes extra
+        if (vidaActual <= 0) return; // Si ya está muerto, ignorar
+
+        
+        // Si este objeto es un Boss Y nos dice que NO es vulnerable...
+        if (scriptBoss != null && !scriptBoss.EsVulnerable())
+        {
+            Debug.Log("¡Ataque bloqueado! El Boss es invulnerable.");
+            return; // ¡Salimos de la función sin restar vida!
+        }
+       
 
         vidaActual -= cantidad;
 
-        // 1. Animación de Daño (Solo si tiene Animator)
+        // Animación de Daño
         if (anim != null) anim.SetTrigger("Daño");
 
-        // 2. Retroceso (Solo si tiene Rigidbody y está activado)
+        // Retroceso
         if (aplicaRetroceso && rb != null)
         {
             Vector2 direccionEmpuje = (transform.position - (Vector3)posicionAtacante).normalized;
+            // Parche de seguridad por si están en la misma posición exacta
+            if (direccionEmpuje == Vector2.zero) direccionEmpuje = Vector2.up; 
+            
             rb.velocity = Vector2.zero; 
             rb.AddForce(direccionEmpuje * fuerzaRetroceso + Vector2.up * 2f, ForceMode2D.Impulse);
         }
@@ -48,7 +63,17 @@ public class SistemaVida : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            StartCoroutine(MorirConEstilo());
+            // MUERTE DIFERENCIADA
+            if (scriptBoss != null)
+            {
+                // Si es el Boss, dejamos que SU script maneje la muerte (cinemática, loot, etc.)
+                scriptBoss.MorirBoss();
+            }
+            else
+            {
+                // Si es el Player o un enemigo normal, usamos la muerte estándar
+                StartCoroutine(MorirConEstilo());
+            }
         }
     }
 
@@ -56,26 +81,22 @@ public class SistemaVida : MonoBehaviour
     {
         Debug.Log(gameObject.name + " ha muerto.");
 
-        // 1. Animación de Muerte
         if (anim != null) anim.SetTrigger("Muerte");
 
-        // 2. Desactivar físicas y colisiones (Para que el cadáver no estorbe)
-       
-        if (rb != null) rb.velocity = Vector2.zero; // Frenar en seco
-        if (rb != null) rb.simulated = false;       // Ya no le afecta la gravedad ni choques
-        if (miCollider != null) miCollider.enabled = false; // Ya no se puede tocar
-
-        // 3. Desactivar Control (Lógica segura)
-      
-        PlayerController playerCtrl = GetComponent<PlayerController>();
-        if (playerCtrl != null)
+        // Desactivar físicas
+        if (rb != null) 
         {
-            playerCtrl.enabled = false;
+            rb.velocity = Vector2.zero;
+            rb.simulated = false; 
         }
-        // 4. Esperar a que termine la animación
-        yield return new WaitForSeconds(1f); // Ajusta este tiempo a lo que dure tu animación
+        if (miCollider != null) miCollider.enabled = false;
 
-        // 5. Decisión final: Reiniciar o Destruir
+        // Desactivar Control si es el Player
+        PlayerController playerCtrl = GetComponent<PlayerController>();
+        if (playerCtrl != null) playerCtrl.enabled = false;
+
+        yield return new WaitForSeconds(1f);
+
         if (gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

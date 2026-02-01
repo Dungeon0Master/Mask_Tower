@@ -19,7 +19,7 @@ public class CausarDaño : MonoBehaviour
         if (collision.CompareTag(tagObjetivo))
         {
             // 2. Buscamos si ese objeto tiene el script de vida
-            SistemaVida vida = collision.GetComponent<SistemaVida>();
+           SistemaVida vida = collision.GetComponentInParent<SistemaVida>();
 
             // 3. Si tiene vida, le hacemos daño Y le mandamos nuestra posición
             if (vida != null)
@@ -40,7 +40,7 @@ public class CausarDaño : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(tagObjetivo))
         {
-            SistemaVida vida = collision.gameObject.GetComponent<SistemaVida>();
+            SistemaVida vida = collision.gameObject.GetComponentInParent<SistemaVida>();
             if (vida != null)
             {
                 vida.RecibirDaño(cantidadDaño, transform.position);

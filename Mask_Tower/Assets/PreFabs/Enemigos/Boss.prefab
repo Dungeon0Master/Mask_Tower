@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7138972210293693270}
   m_Layer: 0
   m_Name: G_Derecha
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 283020580769719754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.36, y: 0, z: 0}
+  m_LocalPosition: {x: 2.33, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -567,10 +567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dac2f908eeb1d4e84ec4b707f2b11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 20
+  vidaMaxima: 10
   vidaActual: 20
   aplicaRetroceso: 1
   fuerzaRetroceso: 5
+  scriptBoss: {fileID: 5771422509962408643}
 --- !u!114 &964209278639807520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,14 +604,19 @@ MonoBehaviour:
   puntoDerecha: {fileID: 229304894530869429}
   puntoIzquierda: {fileID: 5935411851953912751}
   velocidadMovimiento: 4
+  puntoDisparoCarga: {fileID: 0}
+  prefabProyectilCarga: {fileID: 0}
   tiempoCarga: 3.5
   tiempoLluvia: 4
+  tiempoIntro: 2
   hitboxVulnerable: {fileID: 2617185025962127836}
-  prefabFuego: {fileID: 4658933252609739645, guid: 005874eed85f37f48b5f224f93007c58,
+  prefabFuego: {fileID: 4658933252609739645, guid: 3f74d59101a181342b31f9c711b41795,
     type: 3}
   puntoSpawnTecho: {fileID: 8151936563042428116}
   intervaloFuego: 0.4
   fragmentoMascara: {fileID: 0}
+  objetosParaActivar: []
+  objetosParaDesactivar: []
 --- !u!95 &3470147071031429740
 Animator:
   serializedVersion: 5
@@ -644,7 +650,7 @@ GameObject:
   - component: {fileID: 2617185025962127836}
   m_Layer: 0
   m_Name: HitboxVulnerable
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

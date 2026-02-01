@@ -20,12 +20,12 @@ public class HeartUI : MonoBehaviour
     {
         if (estaVacio) return;
 
-        // Animación de perder vida
+        // Animacin de perder vida
         anim.SetTrigger("PerderVida");
         estaVacio = true;
     }
 
-    // Llamado por EVENTO DE ANIMACIÓN
+    // Llamado por EVENTO DE ANIMACIN
     public void SetVacio()
     {
         anim.SetBool("Vacio", true);

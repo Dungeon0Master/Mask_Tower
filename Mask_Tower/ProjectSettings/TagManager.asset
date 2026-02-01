@@ -8,6 +8,7 @@ TagManager:
   - Proyectil
   - Boss
   - Suelo
+  - MusicaGlobal
   layers:
   - Default
   - TransparentFX

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 982304612}
   m_Layer: 0
   m_Name: GestorMusica
-  m_TagString: Untagged
+  m_TagString: MusicaGlobal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

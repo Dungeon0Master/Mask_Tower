@@ -87,8 +87,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 844606981
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -936282214, guid: 486b25a86f574e446b59cc57e24789f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -274,8 +274,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 844606981
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -796529909, guid: 486b25a86f574e446b59cc57e24789f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -479,8 +479,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 844606981
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 360936581, guid: 486b25a86f574e446b59cc57e24789f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dac2f908eeb1d4e84ec4b707f2b11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 10
+  vidaMaxima: 15
   vidaActual: 20
   aplicaRetroceso: 1
   fuerzaRetroceso: 5
@@ -603,6 +603,7 @@ MonoBehaviour:
   puntoCentroArriba: {fileID: 24196306712975598}
   puntoDerecha: {fileID: 229304894530869429}
   puntoIzquierda: {fileID: 5935411851953912751}
+  musicManager: {fileID: 0}
   velocidadMovimiento: 4
   puntoDisparoCarga: {fileID: 0}
   prefabProyectilCarga: {fileID: 0}

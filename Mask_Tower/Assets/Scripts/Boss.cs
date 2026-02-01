@@ -13,6 +13,9 @@ public class BossAbductor : MonoBehaviour
     public Transform puntoDerecha;
     public Transform puntoIzquierda;
 
+    [Header("Música")]
+public MusicManager musicManager;
+
     [Header("Movimiento")]
     public float velocidadMovimiento = 4f;
 
@@ -189,6 +192,8 @@ public class BossAbductor : MonoBehaviour
     {
         // Activamos animación de Muerte
         if (anim != null) anim.SetTrigger("Muerte");
+
+        if(musicManager != null) musicManager.ActivarMusicaAmbiente();
 
         foreach (GameObject obj in objetosParaActivar)
         {

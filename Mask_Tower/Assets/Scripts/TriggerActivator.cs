@@ -15,6 +15,8 @@ public class TriggerActivator : MonoBehaviour
    
     private bool yaSeUso = false;
 
+    public MusicManager musicManager;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("aqui se toco");
@@ -28,6 +30,8 @@ public class TriggerActivator : MonoBehaviour
     private void EjecutarAccion()
     {
         yaSeUso = true;
+
+        if(musicManager != null) musicManager.ActivarMusicaBoss();
 
         // Activar elementos de la lista
         foreach (GameObject obj in objetosAActivar)

@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dac2f908eeb1d4e84ec4b707f2b11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 3
+  vidaMaxima: 1
   vidaActual: 0
   aplicaRetroceso: 1
   fuerzaRetroceso: 5

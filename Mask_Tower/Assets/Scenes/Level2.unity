@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 54632778}
   - component: {fileID: 54632777}
   m_Layer: 0
-  m_Name: BG_Mesh_Near
+  m_Name: BG_Mesh_VFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplier: 0.9
 --- !u!64 &54632778
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ Transform:
   m_GameObject: {fileID: 54632776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.3, y: 2.6, z: 20}
+  m_LocalPosition: {x: 32.3, y: 2.6, z: 15}
   m_LocalScale: {x: 168.2, y: 17.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 107306076}
   - component: {fileID: 107306075}
   m_Layer: 0
-  m_Name: BG_Mesh_VeryFar
+  m_Name: BG_Mesh_Far
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.9
+  parallaxMultiplier: 0.6
 --- !u!64 &107306076
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ Transform:
   m_GameObject: {fileID: 107306074}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.3, y: 2.6, z: 15}
+  m_LocalPosition: {x: 32.3, y: 2.6, z: 12}
   m_LocalScale: {x: 168.2, y: 17.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1141,6 +1141,7 @@ MonoBehaviour:
   vidaActual: 0
   aplicaRetroceso: 1
   fuerzaRetroceso: 4
+  scriptBoss: {fileID: 0}
 --- !u!114 &251851130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,11 +2125,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 35.135044, y: 6.634902}
-      - {x: -46.615242, y: 6.3637924}
-      - {x: -46.37363, y: -9.836429}
-      - {x: 116.00351, y: -9.733845}
-      - {x: 115.86339, y: 6.7550583}
+    - - {x: 37.91142, y: 4.489524}
+      - {x: -36.25981, y: 4.6796465}
+      - {x: -36.187954, y: -9.157384}
+      - {x: 113.64689, y: -9.246267}
+      - {x: 113.38056, y: 4.165145}
   m_UseDelaunayMesh: 0
 --- !u!4 &597871365
 Transform:
@@ -2848,7 +2849,7 @@ Transform:
   m_GameObject: {fileID: 683702353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.83865, y: 0.25981998, z: -10}
+  m_LocalPosition: {x: 102.89275, y: 0.76443994, z: -10}
   m_LocalScale: {x: 1.8927, y: 1.8927, z: 1.8927}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5623,7 +5624,7 @@ GameObject:
   - component: {fileID: 1748279120}
   - component: {fileID: 1748279119}
   m_Layer: 0
-  m_Name: BG_Mesh_Mid
+  m_Name: BG_Mesh_Near
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5641,7 +5642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplier: 0.1
 --- !u!64 &1748279120
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5684,7 +5685,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea02854a920c1774b97d3cabe88c7484, type: 2}
+  - {fileID: 2100000, guid: 0a44d55baab17b54dae77083d586bdd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6414,7 +6415,7 @@ GameObject:
   - component: {fileID: 1903570833}
   - component: {fileID: 1903570832}
   m_Layer: 0
-  m_Name: BG_Mesh_Far
+  m_Name: BG_Mesh_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6432,7 +6433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86e95a7c722bd4dadbc2276785ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.6
+  parallaxMultiplier: 0.3
 --- !u!64 &1903570833
 MeshCollider:
   m_ObjectHideFlags: 0

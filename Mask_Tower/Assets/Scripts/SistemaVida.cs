@@ -33,8 +33,11 @@ public class SistemaVida : MonoBehaviour
     public void RecibirDaño(int cantidad, Vector2 posicionAtacante)
     {
         if (vidaActual <= 0) return; // Si ya está muerto, ignorar
+        if (CompareTag("Player"))
+        {
+            LifeUIManager.Instance.RecibirDaño(1);
+        }
 
-        
         // Si este objeto es un Boss Y nos dice que NO es vulnerable...
         if (scriptBoss != null && !scriptBoss.EsVulnerable())
         {

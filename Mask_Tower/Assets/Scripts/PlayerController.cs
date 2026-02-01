@@ -99,26 +99,28 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate()
+{
+    enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
+
+    if (enSuelo && doubleJump != null)
+        doubleJump.RecargarSalto();
+
+    // 1. Si está cargando ataque O preparando el salto, se queda quieto en X
+    if (estaCargandoAtaque || estaSaltando) 
     {
-        enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
-
-        if (enSuelo && doubleJump != null)
-            doubleJump.RecargarSalto();
-
-        if (estaCargandoAtaque )
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-        else
-        {
-            float velocidad = velocidadCaminar;
-
-            if (puedeCorrer && Input.GetKey(KeyCode.LeftShift))
-                velocidad = velocidadCorrer;
-
-            rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
-        }
+        rb.velocity = new Vector2(0, rb.velocity.y);
     }
+    else
+    {
+        // 2. Movimiento normal solo si NO está saltando/cargando
+        float velocidad = velocidadCaminar;
+
+        if (puedeCorrer && Input.GetKey(KeyCode.LeftShift))
+            velocidad = velocidadCorrer;
+
+        rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
+    }
+}
    
    public void EventoImpulsoSalto()
     {

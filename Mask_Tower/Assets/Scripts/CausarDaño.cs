@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CausarDaño : MonoBehaviour
 {
     //Configuración de Daño
     public int cantidadDaño = 1;   // Editable en el inspector para cada objeto
     
     public string tagObjetivo;     // ¿A quién daña esto? ("Enemigo" o "Player")
+
+    private Animator anim;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,6 +48,7 @@ public class CausarDaño : MonoBehaviour
             if (gameObject.CompareTag("Proyectil"))
             {
                 Destroy(gameObject);
+                if (anim != null) anim.SetTrigger("Impact"); 
             }
         }
     }

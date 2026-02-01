@@ -10,6 +10,20 @@ public class Proyectil : MonoBehaviour
     public void SetDireccion(Vector2 nuevaDireccion)
     {
         direccion = nuevaDireccion.normalized;
+        Vector3 escala = transform.localScale;
+
+        if (direccion.x < 0) 
+        {
+            // Si va a la izquierda, forzamos la escala X a negativa
+            escala.x = -Mathf.Abs(escala.x);
+        }
+        else if (direccion.x > 0)
+        {
+            // Si va a la derecha, forzamos la escala X a positiva
+            escala.x = Mathf.Abs(escala.x);
+        }
+
+        transform.localScale = escala;
     }
 
     void Start()

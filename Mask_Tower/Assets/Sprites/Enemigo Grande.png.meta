@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cf4255e690b6584a94fc75d75e0ea27
+guid: b67e9e0a037af6d45b8fc74f94ffd5e4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Efectos_0
+      name: Enemigo Grande_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3376
+        y: 1440
         width: 720
         height: 720
       alignment: 0
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23f13fb482604c0459c44f7ba9a5755f
-      internalID: 1655761657
+      spriteID: 62891a2921105a04cae453294bdc48fe
+      internalID: 1183368788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_1
+      name: Enemigo Grande_1
       rect:
         serializedVersion: 2
         x: 720
-        y: 3376
+        y: 1440
         width: 720
         height: 720
       alignment: 0
@@ -145,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cdd3e07d376d124b9bb029663d579ac
-      internalID: 959719210
+      spriteID: cf7bb5ed26107c14c8726033f0ccc09a
+      internalID: -1463766627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_2
+      name: Enemigo Grande_2
       rect:
         serializedVersion: 2
         x: 1440
-        y: 3376
+        y: 1440
         width: 720
         height: 720
       alignment: 0
@@ -166,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45d3e41ccb7efce4ab0a7de1615eb838
-      internalID: 1771885996
+      spriteID: 7a1bcaf8daa56b04b9dc3033ab0f282a
+      internalID: -1837232069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_3
+      name: Enemigo Grande_3
       rect:
         serializedVersion: 2
         x: 2160
-        y: 3376
+        y: 1440
         width: 720
         height: 720
       alignment: 0
@@ -187,18 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6581f00ed152ebf45b38f53d244debf9
-      internalID: 1824374632
+      spriteID: 869d3c227e65c94429e0ea6cf9fd0ce9
+      internalID: -24171230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_4
+      name: Enemigo Grande_4
       rect:
         serializedVersion: 2
         x: 2880
-        y: 3376
+        y: 1440
         width: 720
         height: 720
       alignment: 0
@@ -208,18 +208,144 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a487752b9a8612240bee611ac3f2c8a7
-      internalID: 666599279
+      spriteID: 19939be66c80ffd4a943b2a04f400055
+      internalID: 2107956725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_5
+      name: Enemigo Grande_5
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c5c410bc13bdd45b42aafdc622d163
+      internalID: 1278986861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_6
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe28f24ae24c8f47b44262b96895b4c
+      internalID: -519991190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_7
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8e6843e80ce07498412f16d0e2c150
+      internalID: 148094921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_8
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f32d4adae94c0458ceadd3d233bd82
+      internalID: -1976588005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_9
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0c39192a60c8f428e393eaf704f21b
+      internalID: -817844756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_10
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1440
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c71599b1d57e148a1f8bfcd5040d08
+      internalID: -1374393733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_11
       rect:
         serializedVersion: 2
         x: 0
-        y: 2656
+        y: 720
         width: 720
         height: 720
       alignment: 0
@@ -229,18 +355,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 841117457fc096b4fa5d52a91e6f37ef
-      internalID: 53584429
+      spriteID: 10705c9c66434f24c8aa54b0cb8b7014
+      internalID: -977477957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_6
+      name: Enemigo Grande_12
       rect:
         serializedVersion: 2
         x: 720
-        y: 2656
+        y: 720
         width: 720
         height: 720
       alignment: 0
@@ -250,102 +376,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b911bef8f8352748830d21f256b394b
-      internalID: 353132911
+      spriteID: 626168c1cd433d44399cb526befed41f
+      internalID: -1761818322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_7
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 2656
-        width: 720
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7735050b264f8c643871dca65dbf1fa5
-      internalID: 808183051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Efectos_8
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 2656
-        width: 720
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9f203185eed92b41bdf601cd205a0a8
-      internalID: 455573779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Efectos_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1936
-        width: 720
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e84a48159a61bdd4aa251df553db56dc
-      internalID: -1440666800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Efectos_10
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 1936
-        width: 720
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be77ff4b6c4d5d04f995d5b787f29020
-      internalID: -1264192134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Efectos_11
+      name: Enemigo Grande_13
       rect:
         serializedVersion: 2
         x: 1440
-        y: 1936
+        y: 720
         width: 720
         height: 720
       alignment: 0
@@ -355,18 +397,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 341213577f6047f49aa8d2e88940b1cc
-      internalID: 2094475069
+      spriteID: 36bb255841536e74181ae2e7ceb48695
+      internalID: 159388690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_12
+      name: Enemigo Grande_14
       rect:
         serializedVersion: 2
         x: 2160
-        y: 1936
+        y: 720
         width: 720
         height: 720
       alignment: 0
@@ -376,18 +418,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7886ce50eec38c4a9526548a73dffd6
-      internalID: 1166790351
+      spriteID: b08e510630051ae4cb751487f5e1888b
+      internalID: -445456385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_13
+      name: Enemigo Grande_15
       rect:
         serializedVersion: 2
         x: 2880
-        y: 1936
+        y: 720
         width: 720
         height: 720
       alignment: 0
@@ -397,18 +439,123 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e2f1adb33b13848a70782849ee19cb
-      internalID: -1485832559
+      spriteID: 382089af91bcb3a47b48cc8a7862243c
+      internalID: -1793110950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_14
+      name: Enemigo Grande_16
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 720
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3251c1235da51374d8ddec81c9651622
+      internalID: 1431921319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_17
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 720
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5513b47ef39860f4784e241356defd4f
+      internalID: -1059874888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_18
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 720
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc3b30bddfff9e41af0653e60473037
+      internalID: 1548904516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_19
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 720
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487ffb532a57a7948b088c49cbdfc104
+      internalID: 534368466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_20
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 720
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb95c999db258641a219e4ecf1d3166
+      internalID: -248254064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo Grande_21
       rect:
         serializedVersion: 2
         x: 0
-        y: 1216
+        y: 0
         width: 720
         height: 720
       alignment: 0
@@ -418,18 +565,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5668c805d135d714aa262c7c041b26d0
-      internalID: 1554886062
+      spriteID: 6b1b6b40bced7cb4c8af688fed34f428
+      internalID: -2007056377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_15
+      name: Enemigo Grande_22
       rect:
         serializedVersion: 2
         x: 720
-        y: 1216
+        y: 0
         width: 720
         height: 720
       alignment: 0
@@ -439,18 +586,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f8102db5bd79d41a960d74d050da78
-      internalID: -1001189354
+      spriteID: c7a8bf52caa90a44e8f5a794e7513bc7
+      internalID: 95000680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_16
+      name: Enemigo Grande_23
       rect:
         serializedVersion: 2
         x: 1440
-        y: 1216
+        y: 0
         width: 720
         height: 720
       alignment: 0
@@ -460,18 +607,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e916288d97e01a6499f1e1e239c02c78
-      internalID: -108790799
+      spriteID: eba55aa99034bb8429a036b6b387f0c2
+      internalID: -1018523258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Efectos_17
+      name: Enemigo Grande_24
       rect:
         serializedVersion: 2
         x: 2160
-        y: 1216
+        y: 0
         width: 720
         height: 720
       alignment: 0
@@ -481,8 +628,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e952791c1d9e264fbb29fe64fffa278
-      internalID: 1596636201
+      spriteID: a8d962b8d9d91fe43923e9f872953450
+      internalID: 1969894183
       vertices: []
       indices: 
       edges: []
@@ -498,24 +645,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Efectos_0: 1655761657
-      Efectos_1: 959719210
-      Efectos_10: -1264192134
-      Efectos_11: 2094475069
-      Efectos_12: 1166790351
-      Efectos_13: -1485832559
-      Efectos_14: 1554886062
-      Efectos_15: -1001189354
-      Efectos_16: -108790799
-      Efectos_17: 1596636201
-      Efectos_2: 1771885996
-      Efectos_3: 1824374632
-      Efectos_4: 666599279
-      Efectos_5: 53584429
-      Efectos_6: 353132911
-      Efectos_7: 808183051
-      Efectos_8: 455573779
-      Efectos_9: -1440666800
+      Enemigo Grande_0: 1183368788
+      Enemigo Grande_1: -1463766627
+      Enemigo Grande_10: -1374393733
+      Enemigo Grande_11: -977477957
+      Enemigo Grande_12: -1761818322
+      Enemigo Grande_13: 159388690
+      Enemigo Grande_14: -445456385
+      Enemigo Grande_15: -1793110950
+      Enemigo Grande_16: 1431921319
+      Enemigo Grande_17: -1059874888
+      Enemigo Grande_18: 1548904516
+      Enemigo Grande_19: 534368466
+      Enemigo Grande_2: -1837232069
+      Enemigo Grande_20: -248254064
+      Enemigo Grande_21: -2007056377
+      Enemigo Grande_22: 95000680
+      Enemigo Grande_23: -1018523258
+      Enemigo Grande_24: 1969894183
+      Enemigo Grande_3: -24171230
+      Enemigo Grande_4: 2107956725
+      Enemigo Grande_5: 1278986861
+      Enemigo Grande_6: -519991190
+      Enemigo Grande_7: 148094921
+      Enemigo Grande_8: -1976588005
+      Enemigo Grande_9: -817844756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

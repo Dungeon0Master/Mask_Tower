@@ -1,42 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoubleJump : MonoBehaviour
 {
-    public float fuerzaDobleSalto = 10f; // Menor fuerza que el salto normal
+    [Header("Configuración")]
+    public float fuerzaDobleSalto = 8f; // A veces es mejor que sea un poco menor al salto normal
 
+  
+    
     // Estado interno
-    private bool yaSaltoEnElAire = false; 
+    private bool yaUsoDobleSalto = false; 
     private Rigidbody2D rb;
+    private AudioSource audioSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>(); // Necesario si vas a usar sonidos
     }
 
-    // Esta función se llama cuando tocamos el suelo (desde el Controller)
+    // Se llama desde el PlayerController cuando toca el suelo (OnCollisionEnter2D)
     public void RecargarSalto()
     {
-        yaSaltoEnElAire = false;
+        yaUsoDobleSalto = false;
     }
 
-    // Intenta hacer el doble salto. Devuelve true si lo logró, false si no pudo.
+    // Intenta hacer el doble salto. Devuelve true si lo logró.
     public bool IntentarDobleSalto()
     {
-        // Si ya gastamos el salto, no hacemos nada
-        if (yaSaltoEnElAire) return false;
+        // 1. Si ya gastamos el salto, cancelamos
+        if (yaUsoDobleSalto) return false;
 
-        // 1. Reseteamos la velocidad vertical actual
         rb.velocity = new Vector2(rb.velocity.x, 0);
 
-        // 2. Aplicamos la fuerza 
+        // 3. Aplicamos la fuerza de impulso
         rb.AddForce(Vector2.up * fuerzaDobleSalto, ForceMode2D.Impulse);
 
-        // 3. Marcamos que ya se usó
-        yaSaltoEnElAire = true;
+        // 4. Marcamos que ya se usó para que no salte infinito
+        yaUsoDobleSalto = true;
         
+        // 5. Ejecutar efectos (si existen)
+    
         Debug.Log("¡Doble Salto ejecutado!");
         return true;
     }
+
 }

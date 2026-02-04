@@ -1696,7 +1696,7 @@ MonoBehaviour:
     m_Bits: 8
   puedeAtacar: 1
   puedeDobleSalto: 1
-  puedeCorrer: 0
+  puedeCorrer: 1
   puedeDisparar: 1
   enSuelo: 0
 --- !u!50 &1200420485

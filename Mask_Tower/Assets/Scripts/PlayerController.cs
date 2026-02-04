@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,10 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float velocidadCorrer = 14f;
     [SerializeField] float fuerzaSalto = 10f;
 
-    [Header("Suelo")]
-    [SerializeField] Transform controladorSuelo;
-    [SerializeField] float radioDeteccion = 0.2f;
-    [SerializeField] LayerMask layerSuelo;
+    [Header("Suelo (OverlapCircle)")]
+    [SerializeField] Transform controladorSuelo; // Asigna aquí el objeto vacío en los pies
+    [SerializeField] float radioDeteccion = 0.2f; // Tamaño de la bolita
+    [SerializeField] LayerMask layerSuelo;       // Selecciona la capa "Ground"
 
     [Header("Habilidades")]
     public bool puedeAtacar;
@@ -24,15 +25,14 @@ public class PlayerController : MonoBehaviour
     public bool puedeDisparar;
 
     Rigidbody2D rb;
+    Animator anim;
 
     float inputHorizontal;
     public bool enSuelo;
-    Animator anim;
     bool mirandoDerecha = true;
 
     private bool estaCargandoAtaque = false;
-    private bool estaSaltando = false;
-
+    private bool estaSaltando = false; 
 
     void Awake()
     {
@@ -47,47 +47,40 @@ public class PlayerController : MonoBehaviour
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        // SALTO
+        // --- SALTO ---
         if (Input.GetButtonDown("Jump"))
         {
             if (enSuelo && !estaSaltando)
             {
-                // 1. SALTO EN TIERRA (Con carga)
-                // En lugar de saltar ya, iniciamos la animación y bloqueamos
-                estaSaltando = true; 
-
-                if(anim != null) anim.SetTrigger("IniciarSalto"); 
+                estaSaltando = true;
+                Debug.Log("Salto iniciado");
+                if (anim != null) anim.SetTrigger("IniciarSalto");
+                
+                // OPCIONAL: Si la animación falla mucho, descomenta esto para saltar instantáneo:
+                // EventoImpulsoSalto(); 
             }
             else if (puedeDobleSalto && doubleJump != null && !enSuelo)
             {
-                // Aquí activamos la animación nueva específica
-                if(anim != null) anim.SetTrigger("DobleSalto");
-                
-                doubleJump.IntentarDobleSalto();
+                if(doubleJump.IntentarDobleSalto())
+                {
+                    if (anim != null) anim.SetTrigger("DobleSalto");
+                }
             }
         }
 
-        bool ataqueNormalDown = Input.GetButtonDown("Fire1"); // Click izquierdo
-        bool ataqueCargadoPresionado = Input.GetButton("Fire2"); // Click derecho
+        // --- ATAQUES ---
+        bool ataqueNormalDown = Input.GetButtonDown("Fire1"); 
+        bool ataqueCargadoPresionado = Input.GetButton("Fire2"); 
 
-
-        // ATAQUE CARGADO (prioridad)
         if (puedeDisparar && ataqueCargado != null)
-        {
             ataqueCargado.GestionarCarga(ataqueCargadoPresionado);
-        }
 
-        // ATAQUE BÁSICO (solo si NO se cargó)
         if (ataqueNormalDown && puedeAtacar && playerAttack != null && !playerAttack.estaAtacando)
-        {
             playerAttack.RealizarAtaque();
-        }
 
-
-        // VOLTEO
+        // --- VOLTEO ---
         if (playerAttack == null || !playerAttack.estaAtacando)
         {
-            // Bloqueamos volteo si estamos cargando el salto para que no se vea raro
             if (!estaSaltando) 
             {
                 if (inputHorizontal > 0 && !mirandoDerecha) Voltear();
@@ -96,40 +89,60 @@ public class PlayerController : MonoBehaviour
         }
         estaCargandoAtaque = ataqueCargadoPresionado;
 
+        // ANIMACIONES
+        if(anim != null)
+        {
+            anim.SetFloat("VelocidadX", Mathf.Abs(rb.velocity.x));
+            anim.SetBool("EnSuelo", enSuelo);
+        }
     }
 
     void FixedUpdate()
-{
-    enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
-
-    if (enSuelo && doubleJump != null)
-        doubleJump.RecargarSalto();
-
-    // 1. Si está cargando ataque O preparando el salto, se queda quieto en X
-    if (estaCargandoAtaque || estaSaltando) 
     {
-        rb.velocity = new Vector2(0, rb.velocity.y);
-    }
-    else
-    {
-        // 2. Movimiento normal solo si NO está saltando/cargando
-        float velocidad = velocidadCaminar;
+        // 1. DETECCIÓN DE SUELO (Restaurada)
+        // Usamos la posición del objeto vacío 'controladorSuelo'
+        enSuelo = Physics2D.OverlapCircle(controladorSuelo.position, radioDeteccion, layerSuelo);
 
-        if (puedeCorrer && Input.GetKey(KeyCode.LeftShift))
-            velocidad = velocidadCorrer;
+        // 2. CORRECCIÓN DEL BUG DE "CONGELADO"
+        // Si detectamos suelo y estamos cayendo (o quietos en Y), 
+        // forzamos que 'estaSaltando' sea falso.
+        // Esto arregla el problema si la animación de salto nunca llamó al evento.
+        if (enSuelo && rb.velocity.y <= 0.1f)
+        {
+            estaSaltando = false;
+            if (doubleJump != null) doubleJump.RecargarSalto();
+        }
 
-        rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
+        // 3. MOVIMIENTO
+        if (estaCargandoAtaque || estaSaltando) 
+        {
+            // Se queda quieto en X mientras carga o prepara el impulso
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else
+        {
+            float velocidad = velocidadCaminar;
+            if (puedeCorrer && Input.GetKey(KeyCode.LeftShift))
+                velocidad = velocidadCorrer;
+
+            rb.velocity = new Vector2(inputHorizontal * velocidad, rb.velocity.y);
+        }
     }
-}
    
-   public void EventoImpulsoSalto()
+    // Este evento debe ser llamado desde la ANIMACIÓN de salto (al final de la preparación)
+    public void EventoImpulsoSalto()
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
         
+        // ¡OJO! Aquí ya NO ponemos 'estaSaltando = false'.
+        // Mantenemos 'estaSaltando = true' un momento más para que no patine en el aire.
+        // La variable se desactivará sola en FixedUpdate cuando toques el suelo,
+        // o puedes hacer una corrutina pequeña si quieres moverte en el aire inmediatamente.
+        
+        // Si quieres moverte en el aire INMEDIATAMENTE tras el impulso, descomenta esto:
         estaSaltando = false; 
     }
-
 
     void Voltear()
     {
@@ -138,32 +151,26 @@ public class PlayerController : MonoBehaviour
         escala.x *= -1;
         transform.localScale = escala;
     }
+
     public void DesbloquearHabilidad(string nombreHabilidad)
     {
         switch (nombreHabilidad)
         {
-            case "Ataque":
-                puedeAtacar = true;
-                break;
-
-            case "DobleSalto":
-                puedeDobleSalto = true;
-                break;
-
-            case "Correr":
-                puedeCorrer = true;
-                break;
-
-            case "Disparo":
-                puedeDisparar = true;
-                break;
-
-            default:
-                Debug.LogWarning("Habilidad desconocida: " + nombreHabilidad);
-                break;
+            case "Ataque": puedeAtacar = true; break;
+            case "DobleSalto": puedeDobleSalto = true; break;
+            case "Correr": puedeCorrer = true; break;
+            case "Disparo": puedeDisparar = true; break;
+            default: Debug.LogWarning("Habilidad desconocida: " + nombreHabilidad); break;
         }
     }
 
-
-
+    // DIBUJAR GIZMOS (Para ver la bolita roja en el editor)
+    private void OnDrawGizmos()
+    {
+        if (controladorSuelo != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(controladorSuelo.position, radioDeteccion);
+        }
+    }
 }
